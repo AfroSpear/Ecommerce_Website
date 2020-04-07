@@ -24,12 +24,46 @@ class ShoppingCart {
         }
     }
 
+    delete(id) {
+        for (let i = 0; i < this.contents.length; i++) {
+        let item = this.contents[i]
+        if(item.id === id) {
+            --item.qty
+        }
+        }
+       
+    }
+
     getTotal() {
         let sum = 0
         for (const item of this.contents) {
             sum += item.qty * item.product.price
+            
         }
         return sum
+       
+    }
+
+    getTax() {
+        let sum = 0
+        for (const item of this.contents) {
+            sum += item.qty * item.product.price
+            
+        }
+       let tax = sum * 0.07
+       return tax
+       
+    }
+
+    getAfterTax() {
+        let sum = 0
+        for (const item of this.contents) {
+            sum += item.qty * item.product.price
+            
+        }
+        let tax = sum * 0.07
+        let afterTax = sum + tax
+        return afterTax
     }
 
 

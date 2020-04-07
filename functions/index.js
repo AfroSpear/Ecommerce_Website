@@ -153,6 +153,8 @@ app.post('/b/add2cart', async (req, res ) => {
     }
 })
 
+
+
 app.get('/b/shoppingcart', authAndRedirectSignIn, (req, res) => {
     let cart 
     if (!req.session.cart) {
